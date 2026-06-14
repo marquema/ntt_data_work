@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DevIA · La torre de control del desarrollo de software</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <style>
+    :root{
+      --bg:#0a131f;
+      --panel:#0f2031;
+      --panel2:#13283d;
+      --ink:#eaf2f9;
+      --muted:#8aa2b8;
+      --line:#1f3850;
+      --estimar:#36c5f0;   /* azul  */
+      --construir:#7ee787; /* verde */
+      --validar:#ffb454;   /* ambar */
+      --accent:#2dd4bf;
+    }
+    *{box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{
+      margin:0;
+      font-family:"Segoe UI","Helvetica Neue",Arial,sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(1200px 600px at 80% -10%, #16314a 0%, rgba(22,49,74,0) 60%),
+        var(--bg);
+      line-height:1.6;
+    }
+    a{color:var(--accent);}
+
+    header.intro{
+      max-width:1000px;margin:0 auto;padding:120px 40px 30px;text-align:center;
+    }
+    .eyebrow{
+      font-size:.8rem;letter-spacing:3px;text-transform:uppercase;
+      color:var(--accent);font-weight:700;margin-bottom:18px;
+    }
+    header.intro h1{
+      font-size:clamp(2rem,4.5vw,3.4rem);line-height:1.1;margin:0 0 18px;
+      letter-spacing:-.5px;font-weight:800;
+    }
+    header.intro h1 span{color:var(--accent);}
+    header.intro p.sub{font-size:1.15rem;color:var(--muted);max-width:680px;margin:0 auto;}
+    .scrollhint{margin-top:60px;color:var(--muted);font-size:.8rem;letter-spacing:2px;text-transform:uppercase;animation:bob 2s infinite;}
+    @keyframes bob{0%,100%{transform:translateY(0);opacity:.6}50%{transform:translateY(8px);opacity:1}}
+
+    .container{display:flex;max-width:1320px;margin:0 auto;padding:40px 24px 120px;gap:30px;}
+    .text{width:42%;}
+    .viz{
+      width:58%;position:sticky;top:24px;align-self:flex-start;height:calc(100vh - 48px);
+      background:linear-gradient(180deg,var(--panel) 0%,var(--panel2) 100%);
+      border:1px solid var(--line);border-radius:18px;
+      box-shadow:0 20px 60px rgba(0,0,0,.45);
+      padding:22px;display:flex;flex-direction:column;overflow:hidden;
+    }
+    .viz svg{width:100%;flex:1;display:block;}
+    .viz .shot{flex:1;display:none;align-items:center;justify-content:center;}
+    .viz .shot img{max-width:100%;max-height:100%;border-radius:10px;border:1px solid var(--line);box-shadow:0 10px 30px rgba(0,0,0,.5);}
+    .viz .vlabel{font-size:.72rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:6px;}
+
+    .scene{min-height:88vh;opacity:.22;transition:opacity .35s ease;padding:70px 0;}
+    .scene.active{opacity:1;}
+    .scene .kicker{
+      display:inline-block;font-size:.72rem;text-transform:uppercase;letter-spacing:2px;
+      font-weight:700;padding:4px 10px;border-radius:20px;margin-bottom:12px;
+      background:rgba(45,212,191,.12);color:var(--accent);border:1px solid rgba(45,212,191,.3);
+    }
+    .scene.k-est .kicker{background:rgba(54,197,240,.12);color:var(--estimar);border-color:rgba(54,197,240,.3);}
+    .scene.k-con .kicker{background:rgba(126,231,135,.12);color:var(--construir);border-color:rgba(126,231,135,.3);}
+    .scene.k-val .kicker{background:rgba(255,180,84,.12);color:var(--validar);border-color:rgba(255,180,84,.3);}
+    .scene h2{font-size:1.7rem;line-height:1.2;margin:0 0 12px;font-weight:750;}
+    .scene p{font-size:1.02rem;color:#cdddea;margin:10px 0;}
+    .scene b{color:#fff;}
+    .scene .stat{font-size:3rem;font-weight:800;margin:10px 0 0;color:var(--accent);line-height:1;}
+    .scene.k-est .stat{color:var(--estimar);}
+    .scene.k-con .stat{color:var(--construir);}
+    .scene.k-val .stat{color:var(--validar);}
+    .scene small{color:var(--muted);font-size:.82rem;}
+    .pill{display:inline-block;font-size:.78rem;padding:3px 9px;border-radius:6px;background:var(--panel2);border:1px solid var(--line);color:var(--muted);margin:2px 4px 2px 0;}
+
+    footer{max-width:900px;margin:0 auto;padding:50px 40px;text-align:center;color:var(--muted);font-size:.85rem;border-top:1px solid var(--line);}
+    footer b{color:var(--ink);}
+
+    @media(max-width:860px){
+      .container{flex-direction:column;}
+      .text,.viz{width:100%;}
+      .viz{position:relative;height:62vh;top:0;margin-bottom:20px;}
+      .scene{min-height:auto;padding:40px 0;opacity:1;}
+    }
+  </style>
+</head>
+<body>
+
+<header class="intro">
+  <div class="eyebrow">NTT DATA · GDN-e · Utilities &amp; DE · CU IA Iberdrola</div>
+  <h1>De estimar <span>a ojo</span><br/>a una <span>torre de control</span> del software</h1>
+  <p class="sub">Cómo la IA Generativa agéntica convierte el ciclo de desarrollo —estimar, construir, validar— en un panel medible, objetivo y trazable. La plataforma <b>DevIA</b>, en 3 instrumentos.</p>
+  <div class="scrollhint">▼ scroll</div>
+</header>
+
+<div class="container">
+  <div class="text">
+
+    <div class="scene" id="s0">
+      <div class="kicker">El problema</div>
+      <h2>Estimar software es, casi siempre, un juicio experto</h2>
+      <p>El tamaño, el esfuerzo y el coste de un desarrollo se fijan <b>a criterio de una persona</b>. Resultado: estimaciones que no se sostienen, desviaciones frente al esfuerzo real y poca trazabilidad de por qué se decidió lo que se decidió.</p>
+      <p><small>Y lo mismo al validar: ¿el código entregado cumple de verdad la Historia de Usuario? Difícil de cuantificar sin abrir cada caso.</small></p>
+    </div>
+
+    <div class="scene" id="s1">
+      <div class="kicker">La caja negra</div>
+      <h2>El ciclo del proyecto pierde control en cada salto</h2>
+      <p>Entre <b>estimar</b>, <b>construir</b> y <b>validar</b> hay tres saltos de información. En cada uno se pierde objetividad: lo presupuestado deja de cuadrar con lo ejecutado, y lo entregado con lo pedido.</p>
+      <p>Necesitamos instrumentar el ciclo, no narrarlo a posteriori.</p>
+    </div>
+
+    <div class="scene" id="s2">
+      <div class="kicker">El giro</div>
+      <h2>DevIA: una plataforma de IA Generativa sobre el ciclo</h2>
+      <p>De la evolución de <b>DevIA</b> nacen <b>3 iniciativas</b> que refuerzan gestión, estimación y validación del desarrollo. No son documentos: son <b>microservicios</b> que leen Historias de Usuario y código real y devuelven métricas.</p>
+      <p>Juntas forman la <b>torre de control</b>: tres instrumentos sobre un mismo ciclo.</p>
+    </div>
+
+    <div class="scene k-est" id="s3">
+      <div class="kicker">Instrumento 1 · Estimar</div>
+      <h2>Estimador IFPUG Fase III — Punto Función + SNAP</h2>
+      <p>Desde una Historia de Usuario, un LLM separa requisitos <b>funcionales</b> y <b>no funcionales</b> y aplica <b>Puntos Función</b> (IFPUG) y <b>SNAP</b> respectivamente.</p>
+      <p>La Fase III incorpora el bloque <span class="pill">Interface Design</span><span class="pill">SNAP UX</span> — usabilidad, accesibilidad, atractivo visual — que el juicio experto suele infraestimar.</p>
+      <p><small>Validado contra Quanter: DevIA identifica el mismo desarrollo no funcional y además lo cuantifica con SNAP.</small></p>
+    </div>
+
+    <div class="scene k-est" id="s4">
+      <div class="kicker">Instrumento 1 · Estimar</div>
+      <h2>Estimador COCOMO II — del código al esfuerzo</h2>
+      <p>Partiendo del <b>código entregado</b>, calcula <b>KLOC</b> (sin comentarios ni líneas vacías) y un LLM detecta los factores técnicos COCOMO II con su razonamiento.</p>
+      <p>Devuelve <b>esfuerzo</b> (persona-mes), <b>duración</b>, <b>tamaño de equipo</b> y <b>coste</b>, desglosados por fase. Permite responder: ¿el valor real de la entrega está alineado con su coste?</p>
+      <p><small>Histórico almacenado en PostgreSQL para mejora continua.</small></p>
+    </div>
+
+    <div class="scene k-con" id="s5">
+      <div class="kicker">Instrumento 2 · Construir — IA agéntica</div>
+      <h2>Spec-Driven Development: la spec manda, los agentes ejecutan</h2>
+      <p><b>1. Spec primero.</b> Requisitos claros, Gherkin, criterios de aceptación verificables. No "ya documentaremos".</p>
+      <p><b>2. La IA genera.</b> Desde la spec, los <b>agentes</b> producen épicas, arquitectura, código y tests. Todo derivado de la spec.</p>
+      <p><b>3. Humano valida.</b> <b>Human-in-the-loop no es negociable</b>: sin validación, el pipeline para.</p>
+      <p><b>4. Iterar acotado.</b> Por pasos, sin superar la ventana de contexto. Si no cabe, se divide.</p>
+    </div>
+
+    <div class="scene k-val" id="s6">
+      <div class="kicker">Instrumento 3 · Validar</div>
+      <h2>Validador de código — % de cumplimiento de la HU</h2>
+      <p>Desde la <b>Historia de Usuario</b> y el <b>código</b>, un LLM compara funcionalidades solicitadas vs cubiertas y devuelve un <b>porcentaje de cumplimiento</b> con justificación y recomendaciones.</p>
+      <p>Reduce la interpretación subjetiva en la aceptación: identifica funcionalidades incompletas, mal implementadas o no alineadas, y acorta el tiempo de aceptación técnica.</p>
+    </div>
+
+    <div class="scene" id="s7">
+      <div class="kicker">El panel completo</div>
+      <h2>Tres instrumentos, un mismo ciclo bajo control</h2>
+      <p>Estimar marca el plan, Construir lo ejecuta con agentes y validación humana, Validar mide la entrega. El bucle se <b>cierra y se mide</b> de extremo a extremo.</p>
+      <p>Eso es la torre de control: cada fase deja un dato objetivo y trazable.</p>
+    </div>
+
+    <div class="scene" id="s8">
+      <div class="kicker">El valor</div>
+      <h2>Lo que gana el proyecto</h2>
+      <p><span class="pill">Estimación objetiva</span><span class="pill">Menos desviación plan vs real</span><span class="pill">Menos retrabajo</span><span class="pill">Trazabilidad</span><span class="pill">Transparencia en presupuestación</span><span class="pill">Confianza en cada entrega</span></p>
+      <p>De estimar a ojo a un panel donde cada decisión tiene un número detrás. Eso es el <b>Punto de Valor</b> de la IA en Iberdrola.</p>
+    </div>
+
+  </div>
+
+  <div class="viz">
+    <div class="vlabel" id="vlabel">Torre de control · DevIA</div>
+    <svg viewBox="0 0 760 600" preserveAspectRatio="xMidYMid meet"></svg>
+    <div class="shot" id="shot"><img alt="captura software DevIA"/></div>
+  </div>
+</div>
+
+<footer>
+  <b>DevIA — Torre de control del desarrollo</b> · Sector Day Utilities &amp; DE (jun. 2026) · NTT DATA GDN-e · Marcos Marqués<br/>
+  Storytelling de datos · estructura <i>Martini Glass</i> (Segel &amp; Heer) · UOC Visualización de Datos.
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
