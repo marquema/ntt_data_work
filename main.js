@@ -1,5 +1,5 @@
 // ============================================================
-// DevIA · La torre de control del desarrollo de software
+// NttData · La torre de control del desarrollo de software
 // Scrollytelling (Martini Glass). SVG control-tower que ilumina
 // 3 instrumentos: Estimar / Construir / Validar.
 // ============================================================
@@ -41,7 +41,7 @@ const core = root.append("g").attr("transform","translate(380,120)");
 core.append("rect").attr("class","core-box").attr("x",-90).attr("y",-34).attr("width",180).attr("height",68)
   .attr("rx",14).attr("fill","#0c2233").attr("stroke",C.line).attr("stroke-width",2);
 core.append("text").attr("text-anchor","middle").attr("y",-2).attr("fill",C.core)
-  .attr("font-size",26).attr("font-weight",800).attr("letter-spacing","1px").text("DevIA");
+  .attr("font-size",26).attr("font-weight",800).attr("letter-spacing","1px").text("NttData");
 core.append("text").attr("text-anchor","middle").attr("y",20).attr("fill",C.muted)
   .attr("font-size",12).attr("letter-spacing","1.5px").text("PLATAFORMA IA GENERATIVA");
 
@@ -130,15 +130,15 @@ const STATES = {
   s1: ()=>{ swapToSvg("El ciclo, sin instrumentar"); core.transition().attr("opacity",.3); activeInstr([]);
             setGauge("estimar",0); setGauge("construir",0); setGauge("validar",0); pipe.transition().attr("opacity",0);
             caption.text("Estimar → Construir → Validar · 3 saltos, 3 cajas negras"); },
-  s2: ()=>{ swapToSvg("Torre de control · DevIA"); core.transition().duration(600).attr("opacity",1);
+  s2: ()=>{ swapToSvg("Torre de control · NttData"); core.transition().duration(600).attr("opacity",1);
             activeInstr(["estimar","construir","validar"]); setGauge("estimar",.15); setGauge("construir",.15); setGauge("validar",.15);
             pipe.transition().attr("opacity",0); caption.text("3 microservicios sobre un mismo ciclo"); },
-  s3: ()=> swapToShot("cu1_ifpug.png","Estimador IFPUG Fase III — PF + SNAP (captura DevIA)"),
-  s4: ()=> swapToShot("cu2_cocomo.png","Estimador COCOMO II — esfuerzo · coste (captura DevIA)"),
+  s3: ()=> swapToShot("cu1_ifpug.png","Estimador IFPUG Fase III — PF + SNAP (captura NttData)"),
+  s4: ()=> swapToShot("cu2_cocomo.png","Estimador COCOMO II — esfuerzo · coste (captura NttData)"),
   s5: ()=>{ swapToSvg("Construir · IA agéntica"); core.transition().attr("opacity",1);
             activeInstr(["construir"]); setGauge("construir",1,100); pipe.transition().duration(600).attr("opacity",1);
             caption.text("Spec-Driven Development · human-in-the-loop no negociable"); },
-  s6: ()=> swapToShot("cu3_validador.png","Validador de código — % cumplimiento HU (captura DevIA)"),
+  s6: ()=> swapToShot("cu3_validador.png","Validador de código — % cumplimiento HU (captura NttData)"),
   s7: ()=>{ swapToSvg("Panel completo · ciclo cerrado"); core.transition().attr("opacity",1); pipe.transition().attr("opacity",0);
             activeInstr(["estimar","construir","validar"]); setGauge("estimar",.92,92); setGauge("construir",1,100); setGauge("validar",.88,88);
             caption.text("Cada fase deja un dato objetivo y trazable"); },

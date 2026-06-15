@@ -1,7 +1,7 @@
-# DevIA · La torre de control del desarrollo de software
+# NttData · La torre de control del desarrollo de software
 
 Scrollytelling (storytelling de datos, estructura *Martini Glass* — Segel & Heer) sobre los
-**3 casos de uso de IA Generativa de DevIA** para Iberdrola, presentados en el
+**3 casos de uso de IA Generativa de NttData**, presentados en el
 **Sector Day Utilities & DE (jun. 2026)** de NTT DATA GDN-e.
 
 La narrativa: pasar de *estimar software a ojo* a una **torre de control** medible y trazable,
@@ -18,7 +18,7 @@ con tres instrumentos sobre un mismo ciclo de proyecto.
 
 - `index.html` — escenas + panel sticky.
 - `main.js` — driver de scroll (IntersectionObserver) + control-tower en SVG (D3 v7) que ilumina cada instrumento; en las escenas de cada CU intercambia el SVG por la captura real del software.
-- `assets/` — capturas del software DevIA (extraídas del deck del Sector Day).
+- `assets/` — capturas del software NttData (extraídas del deck del Sector Day).
 
 ## Ver online
 
