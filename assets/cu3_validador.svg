@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 520" font-family="Segoe UI,Arial,sans-serif">
+  <defs>
+    <linearGradient id="g3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0f2031"/><stop offset="1" stop-color="#0b1827"/>
+    </linearGradient>
+  </defs>
+  <rect width="820" height="520" rx="14" fill="url(#g3)" stroke="#1f3850"/>
+  <rect x="0" y="0" width="820" height="44" rx="14" fill="#13283d"/>
+  <circle cx="24" cy="22" r="6" fill="#ff5f56"/><circle cx="44" cy="22" r="6" fill="#ffbd2e"/><circle cx="64" cy="22" r="6" fill="#27c93f"/>
+  <text x="100" y="27" fill="#8aa2b8" font-size="14">Validador de código · % de cumplimiento de la HU</text>
+
+  <text x="32" y="84" fill="#ffb454" font-size="13" font-weight="700" letter-spacing="1">HISTORIA DE USUARIO + CÓDIGO</text>
+  <rect x="32" y="96" width="370" height="46" rx="8" fill="#0c1a2a" stroke="#27425e"/>
+  <text x="48" y="124" fill="#cdddea" font-size="13">HU.md</text>
+  <rect x="414" y="96" width="200" height="46" rx="8" fill="#0c1a2a" stroke="#27425e"/>
+  <text x="430" y="124" fill="#cdddea" font-size="13">entrega.zip</text>
+
+  <!-- donut gauge -->
+  <g transform="translate(150,300)">
+    <circle r="92" fill="none" stroke="#27425e" stroke-width="20"/>
+    <circle r="92" fill="none" stroke="#ffb454" stroke-width="20" stroke-linecap="round"
+            stroke-dasharray="451 578" transform="rotate(-90)"/>
+    <text y="6" text-anchor="middle" fill="#ffb454" font-size="48" font-weight="800">78%</text>
+    <text y="34" text-anchor="middle" fill="#8aa2b8" font-size="13">cumplimiento</text>
+  </g>
+
+  <!-- requisitos checklist -->
+  <text x="320" y="186" fill="#ffb454" font-size="13" font-weight="700" letter-spacing="1">REQUISITOS vs CÓDIGO</text>
+  <rect x="320" y="198" width="468" height="248" rx="8" fill="#0c1a2a" stroke="#27425e"/>
+  <g font-size="13" fill="#cdddea">
+    <circle cx="344" cy="230" r="7" fill="#7ee787"/><text x="362" y="235">Alta de entidad</text><text x="760" y="235" text-anchor="end" fill="#7ee787">OK</text>
+    <circle cx="344" cy="264" r="7" fill="#7ee787"/><text x="362" y="269">Validación de campos</text><text x="760" y="269" text-anchor="end" fill="#7ee787">OK</text>
+    <circle cx="344" cy="298" r="7" fill="#7ee787"/><text x="362" y="303">Listado con filtros</text><text x="760" y="303" text-anchor="end" fill="#7ee787">OK</text>
+    <circle cx="344" cy="332" r="7" fill="#ffb454"/><text x="362" y="337">Exportación a Excel</text><text x="760" y="337" text-anchor="end" fill="#ffb454">PARCIAL</text>
+    <circle cx="344" cy="366" r="7" fill="#ff5f56"/><text x="362" y="371">Auditoría de cambios</text><text x="760" y="371" text-anchor="end" fill="#ff5f56">FALTA</text>
+    <line x1="336" y1="392" x2="772" y2="392" stroke="#1f3850"/>
+    <text x="362" y="420" fill="#8aa2b8" font-size="12">Recomendación: completar exportación y añadir auditoría.</text>
+  </g>
+  <rect x="620" y="466" width="168" height="36" rx="8" fill="#b8741f"/>
+  <text x="704" y="489" text-anchor="middle" fill="#fff6ea" font-size="13" font-weight="700">Analizar entrega</text>
+  <text x="32" y="468" fill="#5b7790" font-size="11">Mockup ilustrativo · validación HU ↔ código</text>
+</svg>

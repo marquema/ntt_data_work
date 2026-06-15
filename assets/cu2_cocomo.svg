@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 520" font-family="Segoe UI,Arial,sans-serif">
+  <defs>
+    <linearGradient id="g2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0f2031"/><stop offset="1" stop-color="#0b1827"/>
+    </linearGradient>
+  </defs>
+  <rect width="820" height="520" rx="14" fill="url(#g2)" stroke="#1f3850"/>
+  <rect x="0" y="0" width="820" height="44" rx="14" fill="#13283d"/>
+  <circle cx="24" cy="22" r="6" fill="#ff5f56"/><circle cx="44" cy="22" r="6" fill="#ffbd2e"/><circle cx="64" cy="22" r="6" fill="#27c93f"/>
+  <text x="100" y="27" fill="#8aa2b8" font-size="14">Estimador COCOMO II · del código al esfuerzo</text>
+
+  <text x="32" y="84" fill="#36c5f0" font-size="13" font-weight="700" letter-spacing="1">CÓDIGO FUENTE (.zip / repo)</text>
+  <rect x="32" y="96" width="468" height="46" rx="8" fill="#0c1a2a" stroke="#27425e"/>
+  <text x="48" y="124" fill="#cdddea" font-size="13">proyecto.zip</text>
+  <rect x="512" y="96" width="120" height="46" rx="8" fill="#0c1a2a" stroke="#27425e"/>
+  <text x="572" y="118" text-anchor="middle" fill="#8aa2b8" font-size="11">KLOC</text>
+  <text x="572" y="135" text-anchor="middle" fill="#36c5f0" font-size="15" font-weight="700">12.4</text>
+  <rect x="644" y="96" width="144" height="46" rx="8" fill="#0c1a2a" stroke="#27425e"/>
+  <text x="716" y="118" text-anchor="middle" fill="#8aa2b8" font-size="11">€ / persona-mes</text>
+  <text x="716" y="135" text-anchor="middle" fill="#36c5f0" font-size="15" font-weight="700">5.500</text>
+
+  <text x="32" y="184" fill="#36c5f0" font-size="13" font-weight="700" letter-spacing="1">MÉTRICAS ESTIMADAS</text>
+  <!-- 4 metric cards -->
+  <g>
+    <rect x="32" y="198" width="180" height="120" rx="8" fill="#0c1a2a" stroke="#27425e"/>
+    <text x="122" y="232" text-anchor="middle" fill="#8aa2b8" font-size="12">ESFUERZO</text>
+    <text x="122" y="276" text-anchor="middle" fill="#36c5f0" font-size="36" font-weight="800">38</text>
+    <text x="122" y="298" text-anchor="middle" fill="#8aa2b8" font-size="12">persona-mes</text>
+  </g>
+  <g>
+    <rect x="224" y="198" width="180" height="120" rx="8" fill="#0c1a2a" stroke="#27425e"/>
+    <text x="314" y="232" text-anchor="middle" fill="#8aa2b8" font-size="12">DURACIÓN</text>
+    <text x="314" y="276" text-anchor="middle" fill="#36c5f0" font-size="36" font-weight="800">7,2</text>
+    <text x="314" y="298" text-anchor="middle" fill="#8aa2b8" font-size="12">meses</text>
+  </g>
+  <g>
+    <rect x="416" y="198" width="180" height="120" rx="8" fill="#0c1a2a" stroke="#27425e"/>
+    <text x="506" y="232" text-anchor="middle" fill="#8aa2b8" font-size="12">EQUIPO</text>
+    <text x="506" y="276" text-anchor="middle" fill="#36c5f0" font-size="36" font-weight="800">5,3</text>
+    <text x="506" y="298" text-anchor="middle" fill="#8aa2b8" font-size="12">personas</text>
+  </g>
+  <g>
+    <rect x="608" y="198" width="180" height="120" rx="8" fill="#0c1a2a" stroke="#27425e"/>
+    <text x="698" y="232" text-anchor="middle" fill="#8aa2b8" font-size="12">COSTE</text>
+    <text x="698" y="276" text-anchor="middle" fill="#7ee787" font-size="34" font-weight="800">209k</text>
+    <text x="698" y="298" text-anchor="middle" fill="#8aa2b8" font-size="12">€ total</text>
+  </g>
+
+  <!-- effort distribution bars -->
+  <text x="32" y="356" fill="#36c5f0" font-size="13" font-weight="700" letter-spacing="1">DESGLOSE POR FASE</text>
+  <g font-size="12" fill="#cdddea">
+    <text x="32" y="384">Análisis</text>      <rect x="150" y="374" width="120" height="12" rx="6" fill="#36c5f0"/>
+    <text x="32" y="408">Diseño / código</text><rect x="150" y="398" width="300" height="12" rx="6" fill="#36c5f0"/>
+    <text x="32" y="432">Pruebas</text>       <rect x="150" y="422" width="180" height="12" rx="6" fill="#36c5f0"/>
+    <text x="32" y="456">Documentación</text> <rect x="150" y="446" width="90"  height="12" rx="6" fill="#36c5f0"/>
+    <text x="32" y="480">Despliegue</text>    <rect x="150" y="470" width="60"  height="12" rx="6" fill="#36c5f0"/>
+  </g>
+  <rect x="620" y="466" width="168" height="36" rx="8" fill="#1a8f5f"/>
+  <text x="704" y="489" text-anchor="middle" fill="#eafff3" font-size="13" font-weight="700">Ejecutar estimación</text>
+  <text x="510" y="378" fill="#5b7790" font-size="11">Factores COCOMO II detectados por IA</text>
+</svg>

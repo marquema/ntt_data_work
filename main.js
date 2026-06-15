@@ -133,12 +133,12 @@ const STATES = {
   s2: ()=>{ swapToSvg("Torre de control · NttData"); core.transition().duration(600).attr("opacity",1);
             activeInstr(["estimar","construir","validar"]); setGauge("estimar",.15); setGauge("construir",.15); setGauge("validar",.15);
             pipe.transition().attr("opacity",0); caption.text("3 microservicios sobre un mismo ciclo"); },
-  s3: ()=> swapToShot("cu1_ifpug.png","Estimador IFPUG Fase III — PF + SNAP (captura NttData)"),
-  s4: ()=> swapToShot("cu2_cocomo.png","Estimador COCOMO II — esfuerzo · coste (captura NttData)"),
+  s3: ()=> swapToShot("cu1_ifpug.svg","Estimador IFPUG Fase III — PF + SNAP (mockup ilustrativo)"),
+  s4: ()=> swapToShot("cu2_cocomo.svg","Estimador COCOMO II — esfuerzo · coste (mockup ilustrativo)"),
   s5: ()=>{ swapToSvg("Construir · IA agéntica"); core.transition().attr("opacity",1);
             activeInstr(["construir"]); setGauge("construir",1,100); pipe.transition().duration(600).attr("opacity",1);
             caption.text("Spec-Driven Development · human-in-the-loop no negociable"); },
-  s6: ()=> swapToShot("cu3_validador.png","Validador de código — % cumplimiento HU (captura NttData)"),
+  s6: ()=> swapToShot("cu3_validador.svg","Validador de código — % cumplimiento HU (mockup ilustrativo)"),
   s7: ()=>{ swapToSvg("Panel completo · ciclo cerrado"); core.transition().attr("opacity",1); pipe.transition().attr("opacity",0);
             activeInstr(["estimar","construir","validar"]); setGauge("estimar",.92,92); setGauge("construir",1,100); setGauge("validar",.88,88);
             caption.text("Cada fase deja un dato objetivo y trazable"); },

@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 520" font-family="Segoe UI,Arial,sans-serif">
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0f2031"/><stop offset="1" stop-color="#0b1827"/>
+    </linearGradient>
+  </defs>
+  <rect width="820" height="520" rx="14" fill="url(#g1)" stroke="#1f3850"/>
+  <rect x="0" y="0" width="820" height="44" rx="14" fill="#13283d"/>
+  <circle cx="24" cy="22" r="6" fill="#ff5f56"/><circle cx="44" cy="22" r="6" fill="#ffbd2e"/><circle cx="64" cy="22" r="6" fill="#27c93f"/>
+  <text x="100" y="27" fill="#8aa2b8" font-size="14">Estimador IFPUG · Punto Función + SNAP</text>
+
+  <text x="32" y="84" fill="#36c5f0" font-size="13" font-weight="700" letter-spacing="1">HISTORIA DE USUARIO</text>
+  <rect x="32" y="96" width="756" height="58" rx="8" fill="#0c1a2a" stroke="#27425e"/>
+  <rect x="48" y="112" width="520" height="9" rx="4" fill="#2b4258"/>
+  <rect x="48" y="130" width="360" height="9" rx="4" fill="#22384e"/>
+
+  <text x="32" y="194" fill="#36c5f0" font-size="13" font-weight="700" letter-spacing="1">REQUISITOS IDENTIFICADOS</text>
+  <rect x="32" y="206" width="468" height="240" rx="8" fill="#0c1a2a" stroke="#27425e"/>
+  <line x1="32" y1="238" x2="500" y2="238" stroke="#1f3850"/>
+  <text x="48" y="230" fill="#8aa2b8" font-size="11">REQUISITO</text>
+  <text x="300" y="230" fill="#8aa2b8" font-size="11">TIPO</text>
+  <text x="420" y="230" fill="#8aa2b8" font-size="11">PUNTOS</text>
+  <g font-size="13" fill="#cdddea">
+    <text x="48" y="266">FP_1 · Alta de entidad</text><text x="300" y="266" fill="#36c5f0">PF</text><text x="430" y="266">7</text>
+    <text x="48" y="298">FP_2 · Consulta / filtro</text><text x="300" y="298" fill="#36c5f0">PF</text><text x="430" y="298">5</text>
+    <text x="48" y="330">FP_3 · Reporte / salida</text><text x="300" y="330" fill="#36c5f0">PF</text><text x="430" y="330">4</text>
+    <text x="48" y="362">SNAP_1 · Interface Design</text><text x="300" y="362" fill="#7ee787">SNAP</text><text x="430" y="362">18</text>
+    <text x="48" y="394">SNAP_2 · Usabilidad UX</text><text x="300" y="394" fill="#7ee787">SNAP</text><text x="430" y="394">14</text>
+    <text x="48" y="426" fill="#8aa2b8" font-size="11">… requisitos no funcionales (SNAP UX)</text>
+  </g>
+
+  <rect x="520" y="206" width="268" height="240" rx="8" fill="#0c1a2a" stroke="#27425e"/>
+  <text x="654" y="244" text-anchor="middle" fill="#8aa2b8" font-size="12" letter-spacing="1">TAMAÑO FUNCIONAL</text>
+  <text x="654" y="300" text-anchor="middle" fill="#36c5f0" font-size="46" font-weight="800">16 PF</text>
+  <text x="654" y="320" text-anchor="middle" fill="#8aa2b8" font-size="12">Puntos Función (IFPUG)</text>
+  <line x1="556" y1="346" x2="752" y2="346" stroke="#1f3850"/>
+  <text x="654" y="392" text-anchor="middle" fill="#7ee787" font-size="46" font-weight="800">32</text>
+  <text x="654" y="412" text-anchor="middle" fill="#8aa2b8" font-size="12">Puntos SNAP (no funcional)</text>
+
+  <rect x="620" y="466" width="168" height="36" rx="8" fill="#1a8f5f"/>
+  <text x="704" y="489" text-anchor="middle" fill="#eafff3" font-size="13" font-weight="700">Generar estimación</text>
+  <text x="32" y="490" fill="#5b7790" font-size="11">Mockup ilustrativo · metodología IFPUG PF + SNAP</text>
+</svg>
